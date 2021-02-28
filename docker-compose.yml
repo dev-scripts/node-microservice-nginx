@@ -1,0 +1,29 @@
+version: '3'
+services:
+  nginx_load_balancer:
+    image: nginx
+    volumes:
+      - './nginx/default.conf:/etc/nginx/nginx.conf'
+    ports:
+      - '8080:80'
+  app1:
+    image: node-app
+    environment: 
+      - APPID=1111
+  app2:
+    image: node-app
+    environment: 
+      - APPID=2222
+  app3:
+    image: node-app
+    environment: 
+      - APPID=3333
+  app4:
+    image: node-app
+    environment: 
+      - APPID=4444
+  app5:
+    image: node-app
+    environment: 
+      - APPID=5555
+    
